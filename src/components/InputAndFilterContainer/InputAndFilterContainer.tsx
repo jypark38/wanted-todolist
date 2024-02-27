@@ -3,16 +3,27 @@ import styles from "./InputAndFilterContainer.module.css";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/slice/todosSlice";
 import { nanoid } from "@reduxjs/toolkit";
+import { filterOptions, setFilter } from "../../store/slice/filterSlice";
 
 const Filter = () => {
+  const dispatch = useDispatch();
+  const btns = Object.values(filterOptions).map((option) => {
+    const handleClick = () => {
+      dispatch(setFilter(option));
+    };
+
+    return (
+      <li key={option}>
+        <button type="button" onClick={handleClick}>
+          {option}
+        </button>
+      </li>
+    );
+  });
   return (
     <section className={styles.FilterContainer}>
       <h2>Filter</h2>
-      <ul>
-        <li>all</li>
-        <li>completed</li>
-        <li>unCompleted</li>
-      </ul>
+      <ul>{btns}</ul>
     </section>
   );
 };

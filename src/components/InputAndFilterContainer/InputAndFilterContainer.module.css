@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.InputContainer {
-  margin-top: 50px;
-}
-
 .InputContainer input {
   width: 100%;
 
@@ -23,10 +19,17 @@
   .Container {
     order: 1;
     flex-basis: 0;
-    width: 380px;
     margin: 0 auto;
+
+    display: flex;
+    gap: 30px;
+    width: 80vw;
+    justify-content: center;
+  }
+  .FilterContainer {
+    flex-grow: 1;
   }
   .InputContainer {
-    margin-top: 0;
+    width: 300px;
   }
 }

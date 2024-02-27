@@ -22,11 +22,13 @@ const Item = React.memo(({ todoId }: ItemProps) => {
   const handleComplete = () =>
     dispatch(completeTodo({ ...item, completed: !item.completed }));
 
+  const completedText = item.completed ? "취소" : "완료";
+
   return (
     <article className={styles.Item}>
       <p>{item.text}</p>
       <div>
-        <button onClick={handleComplete}>완료</button>
+        <button onClick={handleComplete}>{completedText}</button>
         <button onClick={handleDelete}>삭제</button>
       </div>
     </article>
@@ -41,9 +43,8 @@ const List = () => {
   if (todosIds.length) {
     content = (
       <>
-        <p>남은 할 일 : {todosIds.length}</p>
         <ul>
-          {todosIds.map((todoid, idx) => (
+          {todosIds.map((todoid) => (
             <li key={todoid}>
               <Item todoId={todoid} />
             </li>
