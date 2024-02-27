@@ -1,0 +1,32 @@
+.Container {
+  /* max-width: 768px; */
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.Header {
+  padding: 10px 0;
+  background-color: gray;
+}
+
+.logo {
+  max-width: 768px;
+  margin: 0 auto;
+  padding-left: 20px;
+  font-size: 24px;
+}
+
+.Main {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .Main {
+    flex-direction: column;
+    height: calc(100vh - 44px);
+    gap: 0;
+  }
+}

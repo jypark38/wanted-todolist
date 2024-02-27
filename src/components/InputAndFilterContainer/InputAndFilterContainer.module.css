@@ -1,0 +1,32 @@
+.Container {
+  flex-basis: 293px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+.InputContainer {
+  margin-top: 50px;
+}
+
+.InputContainer input {
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 5px 0;
+
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .Container {
+    order: 1;
+    flex-basis: 0;
+    width: 380px;
+    margin: 0 auto;
+  }
+  .InputContainer {
+    margin-top: 0;
+  }
+}

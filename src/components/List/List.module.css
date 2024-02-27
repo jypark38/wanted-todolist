@@ -1,0 +1,27 @@
+.Container {
+  padding: 20px;
+  flex-basis: 475px;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  height: calc(100vh - 44px);
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .Container {
+    width: 100%;
+    display: block;
+    order: 2;
+    flex-grow: 1;
+    padding-top: 10px;
+  }
+}
+
+.Item {
+  border-bottom: 1px solid black;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+.Item:last-child {
+  margin: 0;
+}

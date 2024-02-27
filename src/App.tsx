@@ -1,9 +1,14 @@
+import List from "./components/List";
+import Layout from "./Layout";
+import Form from "./components/InputAndFilterContainer";
+
 function App() {
   return (
     <>
-      <div>project</div>
-      <input type="text" />
-      <button type="button"></button>
+      <Layout>
+        <List />
+        <Form />
+      </Layout>
     </>
   );
 }
