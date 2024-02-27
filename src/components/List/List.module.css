@@ -1,11 +1,15 @@
 .Container {
-  padding: 20px;
+  padding: 0 20px 30px;
   padding-top: 0;
   flex-basis: 475px;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
+}
+
+.Ul {
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
@@ -17,12 +21,8 @@
     margin: 0 auto;
   }
   .Ul {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 320px);
   }
-}
-
-.Ul {
-  overflow-y: auto;
 }
 
 .Item {
