@@ -1,0 +1,10 @@
+.FilterButton {
+  padding: 3px 10px;
+  color: black;
+}
+
+.FilterButton:hover,
+.Active {
+  color: white;
+  background-color: #5c5ad9;
+}

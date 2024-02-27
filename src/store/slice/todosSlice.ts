@@ -31,7 +31,7 @@ export const { addTodo, deleteTodo, completeTodo } = todosSlice.actions;
 export default todosSlice.reducer;
 
 export const { selectAll: selectAllTodos, selectById: selectTodoById } =
-  todosAdapter.getSelectors<RootState>((state) => state.todos);
+  todosAdapter.getSelectors<RootState>((state: RootState) => state.todos);
 
 export const selectFilterTodo = createSelector(
   selectAllTodos,

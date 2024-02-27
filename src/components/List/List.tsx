@@ -24,11 +24,15 @@ const Item = React.memo(({ todoId }: ItemProps) => {
     dispatch(completeTodo({ ...item, completed: !item.completed }));
 
   const completedText = item.completed ? "취소" : "완료";
+  const itemStatus = item.completed ? "completed" : "pending";
 
   return (
     <article className={styles.Item}>
-      <p>{item.text}</p>
-      <div>
+      <div className={styles.TextContainer}>
+        <p className={styles.TodoText}>{item.text}</p>
+        <span className={styles.Status}>{itemStatus}</span>
+      </div>
+      <div className={styles.ButtonContainer}>
         <Button option={completedText} handleClick={handleComplete} />
         <Button option={"삭제"} handleClick={handleDelete} />
       </div>
@@ -44,7 +48,7 @@ const List = () => {
   if (filterTodosIds.length) {
     content = (
       <>
-        <ul>
+        <ul className={styles.Ul}>
           {filterTodosIds.map((todoid) => (
             <li key={todoid}>
               <Item todoId={todoid} />
@@ -57,7 +61,12 @@ const List = () => {
     content = <div>목록이 비어있어요</div>;
   }
 
-  return <section className={styles.Container}>{content}</section>;
+  return (
+    <section className={styles.Container}>
+      <h2>List</h2>
+      {content}
+    </section>
+  );
 };
 
 export default List;

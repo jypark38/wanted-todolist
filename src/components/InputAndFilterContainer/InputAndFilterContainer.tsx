@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./InputAndFilterContainer.module.css";
 import { addTodo } from "../../store/slice/todosSlice";
-import { nanoid } from "@reduxjs/toolkit";
+import { current, nanoid } from "@reduxjs/toolkit";
 import { filterOptions, setFilter } from "../../store/slice/filterSlice";
-import { useAppDispatch } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import FilterButton from "./FilterButton";
 import Button from "../Button";
 import { buttonProps } from "@/interface/propsType";
@@ -16,14 +16,14 @@ const Filter = () => {
     };
 
     return (
-      <li key={option}>
+      <li key={option} className={styles.ButtonLi}>
         <FilterButton option={option} handleClick={handleClick} />
       </li>
     );
   });
   return (
     <section className={styles.FilterContainer}>
-      <h2>Filter</h2>
+      <h2 className={styles.H2}>Filter</h2>
       <ul>{btns}</ul>
     </section>
   );
@@ -49,8 +49,11 @@ const InputContainer = () => {
     }
   };
 
+  const date = new Date();
+
   return (
     <section className={styles.InputContainer}>
+      <h2 className={styles.H2}>Todo</h2>
       <label htmlFor="todo"></label>
       <input
         type="text"
@@ -60,16 +63,17 @@ const InputContainer = () => {
         onKeyDown={(e) => handleSubmit(e)}
       />
       <Button option="제출" handleClick={(e) => handleSubmit(e)} />
+      <p>Today : {date.toLocaleDateString()}</p>
     </section>
   );
 };
 
 const InputAndFilterContainer = () => {
   return (
-    <section className={styles.Container}>
+    <div className={styles.Container}>
       <Filter />
       <InputContainer />
-    </section>
+    </div>
   );
 };
 

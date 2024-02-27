@@ -1,3 +1,24 @@
-.Red {
-  color: red;
+.Button {
+  padding: 5px 15px;
+  background-color: #ffa07a;
+  border-radius: 5px;
+  color: white;
+}
+
+.Button:hover {
+  opacity: 0.7;
+}
+
+.Positive {
+  background-color: #228be6;
+}
+
+.Negative {
+  background-color: #f06595;
+}
+
+.Submit {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
 }

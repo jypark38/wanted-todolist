@@ -1,27 +1,58 @@
 .Container {
   padding: 20px;
+  padding-top: 0;
   flex-basis: 475px;
-  flex-shrink: 1;
   box-sizing: border-box;
-  height: 100%;
-  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
   .Container {
-    width: 100%;
-    display: block;
+    flex: initial;
+    padding: 0;
+    width: 80vw;
     order: 2;
-    flex-grow: 1;
-    padding: 10px 10% 0 10%;
+    margin: 0 auto;
   }
+  .Ul {
+    height: calc(100vh - 280px);
+  }
+}
+
+.Ul {
+  overflow-y: auto;
 }
 
 .Item {
   border-bottom: 1px solid black;
   padding: 10px 5px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-.Item:last-child {
-  margin: 0;
+
+.TextContainer {
+  position: relative;
+}
+
+.TodoText {
+  width: 70%;
+}
+
+.Status {
+  font-weight: bold;
+  color: #228be6;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ButtonContainer {
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.ButtonContainer button {
+  margin-right: 10px;
 }
