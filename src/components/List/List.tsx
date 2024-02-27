@@ -11,10 +11,9 @@ import { RootState } from "@/store";
 
 interface ItemProps {
   todoId: string;
-  num: number;
 }
 
-const Item = React.memo(({ todoId, num }: ItemProps) => {
+const Item = React.memo(({ todoId }: ItemProps) => {
   const item = useSelector((state: RootState) => selectTodoById(state, todoId));
 
   const dispatch = useDispatch();
@@ -25,9 +24,7 @@ const Item = React.memo(({ todoId, num }: ItemProps) => {
 
   return (
     <article className={styles.Item}>
-      <p>
-        {num}. {item.text}
-      </p>
+      <p>{item.text}</p>
       <div>
         <button onClick={handleComplete}>완료</button>
         <button onClick={handleDelete}>삭제</button>
@@ -48,7 +45,7 @@ const List = () => {
         <ul>
           {todosIds.map((todoid, idx) => (
             <li key={todoid}>
-              <Item todoId={todoid} num={idx} />
+              <Item todoId={todoid} />
             </li>
           ))}
         </ul>

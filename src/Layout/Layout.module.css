@@ -2,6 +2,8 @@
   /* max-width: 768px; */
   margin: 0 auto;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .Header {
@@ -17,16 +19,16 @@
 }
 
 .Main {
-  max-width: 768px;
-  margin: 0 auto;
+  width: 768px;
+  align-self: center;
   display: flex;
-  gap: 10px;
+  flex-grow: 1;
+  overflow-y: hidden;
 }
 
 @media (max-width: 768px) {
   .Main {
     flex-direction: column;
-    height: calc(100vh - 44px);
-    gap: 0;
+    width: 100%;
   }
 }
