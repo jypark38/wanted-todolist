@@ -1,11 +1,8 @@
 import React from "react";
+import { buttonProps } from "../../interface/propsType";
 
-interface propsType {
-  option: string;
-}
-
-const FilterButton = ({ option }: propsType) => {
-  return <div>FilterButton</div>;
+const FilterButton = ({ option, handleClick }: buttonProps) => {
+  return <button onClick={handleClick}>{option}</button>;
 };
 
 export default FilterButton;

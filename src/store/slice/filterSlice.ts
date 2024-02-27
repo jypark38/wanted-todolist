@@ -8,7 +8,7 @@ export const filterOptions = {
 
 const filterSlice = createSlice({
   name: "filter",
-  initialState: "all",
+  initialState: "all" as "all" | "completed" | "unCompleted",
   reducers: {
     setFilter(state, action) {
       return action.payload;

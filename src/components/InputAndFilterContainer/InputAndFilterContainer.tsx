@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styles from "./InputAndFilterContainer.module.css";
-import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/slice/todosSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import { filterOptions, setFilter } from "../../store/slice/filterSlice";
+import { useAppDispatch } from "@/store/hooks";
+import FilterButton from "./FilterButton";
+import Button from "../Button";
+import { buttonProps } from "@/interface/propsType";
 
 const Filter = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const btns = Object.values(filterOptions).map((option) => {
     const handleClick = () => {
       dispatch(setFilter(option));
@@ -14,9 +17,7 @@ const Filter = () => {
 
     return (
       <li key={option}>
-        <button type="button" onClick={handleClick}>
-          {option}
-        </button>
+        <FilterButton option={option} handleClick={handleClick} />
       </li>
     );
   });
@@ -31,10 +32,14 @@ const Filter = () => {
 const InputContainer = () => {
   const [text, setText] = useState<string>("");
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit: buttonProps["handleClick"] = (event) => {
     const trimmedText = text.trim();
+
+    if (event == undefined) return;
+
+    if ("key" in event && event.keyCode !== 13) return;
 
     if (trimmedText) {
       dispatch(
@@ -52,8 +57,9 @@ const InputContainer = () => {
         id="todo"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        onKeyDown={(e) => handleSubmit(e)}
       />
-      <button onClick={handleSubmit}>제출</button>
+      <Button option="제출" handleClick={(e) => handleSubmit(e)} />
     </section>
   );
 };
