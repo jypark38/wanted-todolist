@@ -1,5 +1,6 @@
 .Container {
   flex-basis: 293px;
+
   box-sizing: border-box;
 
   display: flex;
@@ -8,8 +9,8 @@
 }
 
 .Input {
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
   padding: 5px;
 
   border: 1px solid black;
@@ -18,9 +19,9 @@
 
 .Date {
   margin-top: 16px;
-  font-size: 12px;
-  width: fit-content;
   margin-left: auto;
+  width: fit-content;
+  font-size: 12px;
 }
 
 .ButtonLi {
@@ -37,8 +38,8 @@
     margin: 0 auto;
 
     flex-direction: row;
-    width: 80vw;
     justify-content: center;
+    width: 80vw;
   }
   .FilterContainer {
     flex-grow: 1;

@@ -1,8 +1,8 @@
 .Button {
   padding: 5px 15px;
-  background-color: #ffa07a;
   border-radius: 5px;
   color: white;
+  background-color: #ffa07a;
 }
 
 .Button:hover {
