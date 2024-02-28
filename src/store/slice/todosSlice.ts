@@ -5,7 +5,7 @@ import {
   EntityId,
 } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { filterSelector } from "./filterSlice";
+import { memoizedFilterSelector } from "./filterSlice";
 
 interface Todo {
   id: EntityId;
@@ -36,7 +36,7 @@ export const { selectAll: selectAllTodos, selectById: selectTodoById } =
 
 export const selectFilterTodo = createSelector(
   selectAllTodos,
-  filterSelector,
+  memoizedFilterSelector,
   (todos, filter) => {
     if (filter == "all") {
       return todos;

@@ -42,9 +42,7 @@ const InputContainer = () => {
     if ("key" in event && event.keyCode !== 13) return;
 
     if (trimmedText) {
-      dispatch(
-        addTodo({ id: nanoid() as string, text: trimmedText, completed: false })
-      );
+      dispatch(addTodo({ id: nanoid(), text: trimmedText, completed: false }));
       setText("");
     }
   };
