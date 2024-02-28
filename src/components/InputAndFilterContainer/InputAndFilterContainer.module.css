@@ -7,7 +7,7 @@
   gap: 30px;
 }
 
-.InputContainer input {
+.Input {
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
@@ -16,7 +16,7 @@
   border-radius: 3px;
 }
 
-.InputContainer p {
+.Date {
   margin-top: 16px;
   font-size: 12px;
   width: fit-content;

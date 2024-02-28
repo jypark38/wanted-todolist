@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./InputAndFilterContainer.module.css";
 import { addTodo } from "../../store/slice/todosSlice";
-import { current, nanoid } from "@reduxjs/toolkit";
+import { nanoid } from "@reduxjs/toolkit";
 import { filterOptions, setFilter } from "../../store/slice/filterSlice";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch } from "@/store/hooks";
 import FilterButton from "./FilterButton";
 import Button from "../Button";
 import { buttonProps } from "@/interface/propsType";
@@ -56,6 +56,7 @@ const InputContainer = () => {
       <h2 className={styles.H2}>Todo</h2>
       <label htmlFor="todo"></label>
       <input
+        className={styles.Input}
         type="text"
         id="todo"
         value={text}
@@ -63,7 +64,7 @@ const InputContainer = () => {
         onKeyDown={(e) => handleSubmit(e)}
       />
       <Button option="제출" handleClick={(e) => handleSubmit(e)} />
-      <p>Today : {date.toLocaleDateString()}</p>
+      <p className={styles.Date}>Today : {date.toLocaleDateString()}</p>
     </section>
   );
 };
