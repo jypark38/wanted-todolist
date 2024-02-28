@@ -5,6 +5,7 @@ import {
   EntityId,
 } from "@reduxjs/toolkit";
 import { RootState } from "..";
+import { filterSelector } from "./filterSlice";
 
 interface Todo {
   id: EntityId;
@@ -31,11 +32,11 @@ export const { addTodo, deleteTodo, completeTodo } = todosSlice.actions;
 export default todosSlice.reducer;
 
 export const { selectAll: selectAllTodos, selectById: selectTodoById } =
-  todosAdapter.getSelectors<RootState>((state: RootState) => state.todos);
+  todosAdapter.getSelectors<RootState>((state) => state.todos);
 
 export const selectFilterTodo = createSelector(
   selectAllTodos,
-  (state: RootState) => state.filter,
+  filterSelector,
   (todos, filter) => {
     if (filter == "all") {
       return todos;
@@ -47,6 +48,6 @@ export const selectFilterTodo = createSelector(
   }
 );
 
-export const selectFilterTodoIds = createSelector(selectFilterTodo, (todos) => {
-  return todos.map((todo) => todo.id);
-});
+export const selectFilterTodoIds = createSelector(selectFilterTodo, (todos) =>
+  todos.map((todo) => todo.id)
+);
