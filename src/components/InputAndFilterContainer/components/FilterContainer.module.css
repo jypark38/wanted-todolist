@@ -1,0 +1,12 @@
+.ButtonLi {
+  margin-bottom: 10px;
+}
+.ButtonLi:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .FilterContainer {
+    flex-grow: 1;
+  }
+}

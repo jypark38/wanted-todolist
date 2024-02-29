@@ -1,0 +1,21 @@
+.Input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.Date {
+  margin-top: 16px;
+  margin-left: auto;
+  width: fit-content;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .InputContainer {
+    width: 300px;
+  }
+}
