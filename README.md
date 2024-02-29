@@ -2,9 +2,9 @@
 
 ## 반응형
 
-<img width="341" alt="view_mob" src="https://github.com/jypark38/wanted-todolist/assets/126536351/cde0b4b2-8ce3-460d-96c2-2c140562e5e7">
-
 <img width="722" alt="view" src="https://github.com/jypark38/wanted-todolist/assets/126536351/3be97e4d-9e64-4e66-946b-b6e0c66e65fd">
+
+<img width="341" alt="view_mob" src="https://github.com/jypark38/wanted-todolist/assets/126536351/cde0b4b2-8ce3-460d-96c2-2c140562e5e7">
 
 ## 완료
 
@@ -14,7 +14,11 @@
 
 <img src='https://github.com/jypark38/wanted-todolist/assets/126536351/c30d6725-81ee-491f-a710-6c5e94ebeadf'>
 
+<br>
+
 ---
+
+<br>
 
 # React + TypeScript + Vite
 
