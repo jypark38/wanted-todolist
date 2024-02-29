@@ -1,3 +1,21 @@
+# 추가 사항
+
+## 반응형
+
+<img width="341" alt="view_mob" src="https://github.com/jypark38/wanted-todolist/assets/126536351/cde0b4b2-8ce3-460d-96c2-2c140562e5e7">
+
+<img width="722" alt="view" src="https://github.com/jypark38/wanted-todolist/assets/126536351/3be97e4d-9e64-4e66-946b-b6e0c66e65fd">
+
+## 완료
+
+<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/7306b231-23d7-4d07-954b-af7daf2526eb'>
+
+## 필터
+
+<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/c30d6725-81ee-491f-a710-6c5e94ebeadf'>
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -17,12 +35,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
