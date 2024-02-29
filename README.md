@@ -5,12 +5,17 @@
 ### 할 일 추가
 
 - 버튼 클릭, 키보드 엔터로 동작
-
-<img src="https://github.com/jypark38/wanted-todolist/assets/126536351/2bf0cfb6-c1c8-4dbb-bb0b-c6856d7e06a6" style="border: 3px solid black">
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/jypark38/wanted-todolist/assets/126536351/2bf0cfb6-c1c8-4dbb-bb0b-c6856d7e06a6" >
+    </td>
+  </tr>
+</table>
 
 ### 할 일 삭제
 
-<img src="https://github.com/jypark38/wanted-todolist/assets/126536351/506797ca-445d-4326-a1ed-17f03d1cce49" style="border: 3px solid black">
+<img src="https://github.com/jypark38/wanted-todolist/assets/126536351/506797ca-445d-4326-a1ed-17f03d1cce49">
 
 <br>
 
@@ -20,17 +25,17 @@
 
 ### 반응형
 
-<img width="722" alt="view" src="https://github.com/jypark38/wanted-todolist/assets/126536351/3be97e4d-9e64-4e66-946b-b6e0c66e65fd"style="border: 3px solid black">
+<img width="722" alt="view" src="https://github.com/jypark38/wanted-todolist/assets/126536351/3be97e4d-9e64-4e66-946b-b6e0c66e65fd">
 
-<img width="341" alt="view_mob" src="https://github.com/jypark38/wanted-todolist/assets/126536351/cde0b4b2-8ce3-460d-96c2-2c140562e5e7" style="border: 3px solid black">
+<img width="341" alt="view_mob" src="https://github.com/jypark38/wanted-todolist/assets/126536351/cde0b4b2-8ce3-460d-96c2-2c140562e5e7">
 
 ### 완료
 
-<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/7306b231-23d7-4d07-954b-af7daf2526eb' style="border: 3px solid black">
+<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/7306b231-23d7-4d07-954b-af7daf2526eb'>
 
 ### 필터
 
-<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/c30d6725-81ee-491f-a710-6c5e94ebeadf' style="border: 3px solid black">
+<img src='https://github.com/jypark38/wanted-todolist/assets/126536351/c30d6725-81ee-491f-a710-6c5e94ebeadf'>
 
 <br>
 
