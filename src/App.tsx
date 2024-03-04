@@ -1,6 +1,6 @@
 import List from "./components/List";
 import Layout from "./Layout";
-import Form from "./components/InputAndFilterContainer";
+import InputAndFilterContainer from "./components/InputAndFilterContainer";
 import "./global.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Layout>
         <List />
-        <Form />
+        <InputAndFilterContainer />
       </Layout>
     </>
   );
