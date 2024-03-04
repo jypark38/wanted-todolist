@@ -8,10 +8,8 @@ import { shallowEqual } from "react-redux";
 const List = () => {
   const filterTodosIds = useAppSelector(selectFilterTodoIds, shallowEqual);
 
-  let content;
-
   if (filterTodosIds.length) {
-    content = (
+    return (
       <>
         <ul className={styles.Ul}>
           {filterTodosIds.map((todoid) => (
@@ -23,15 +21,17 @@ const List = () => {
       </>
     );
   } else {
-    content = <div>목록이 비어있어요</div>;
+    return <div>목록이 비어있어요</div>;
   }
+};
 
+const ListSection = () => {
   return (
     <section className={styles.Container}>
       <h2>List</h2>
-      {content}
+      {<List />}
     </section>
   );
 };
 
-export default List;
+export default ListSection;
