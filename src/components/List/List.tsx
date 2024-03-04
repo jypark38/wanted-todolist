@@ -3,9 +3,10 @@ import styles from "./List.module.css";
 import { selectFilterTodoIds } from "@/store/slice/todosSlice";
 import { useAppSelector } from "@/store/hooks";
 import Item from "./Item";
+import { shallowEqual } from "react-redux";
 
 const List = () => {
-  const filterTodosIds = useAppSelector(selectFilterTodoIds);
+  const filterTodosIds = useAppSelector(selectFilterTodoIds, shallowEqual);
 
   let content;
 
