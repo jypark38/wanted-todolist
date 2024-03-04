@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./FilterButton.module.css";
 import { buttonProps } from "@/interface/propsType";
 import { useAppSelector } from "@/store/hooks";
-import { memoizedFilterSelector } from "@/store/slice/filterSlice";
+import { filterSelector } from "@/store/slice/filterSlice";
 
 const FilterButton = ({ option, handleClick }: buttonProps) => {
-  const currentStatus = useAppSelector(memoizedFilterSelector);
+  const currentStatus = useAppSelector(filterSelector);
 
   let classname = `${styles.FilterButton}`;
   if (option === currentStatus) {

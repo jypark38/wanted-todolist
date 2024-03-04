@@ -22,8 +22,3 @@ export const { setFilter } = filterSlice.actions;
 export default filterSlice.reducer;
 
 export const filterSelector = (state: RootState) => state.filter;
-
-export const memoizedFilterSelector = createSelector(
-  [filterSelector],
-  (filter) => filter
-);
