@@ -9,11 +9,7 @@ import {
 import Button from "../Button";
 import styles from "./Item.module.css";
 
-interface ItemProps {
-  todoId: EntityId;
-}
-
-const Item = React.memo(({ todoId }: ItemProps) => {
+const useItemHooks = (todoId: EntityId) => {
   const item = useAppSelector((state) => selectTodoById(state, todoId));
 
   const dispatch = useAppDispatch();
@@ -22,8 +18,19 @@ const Item = React.memo(({ todoId }: ItemProps) => {
   const handleComplete = () =>
     dispatch(completeTodo({ ...item, completed: !item.completed }));
 
-  const completedText = item.completed ? "취소" : "완료";
   const itemStatus = item.completed ? "completed" : "pending";
+  const completedText = item.completed ? "취소" : "완료";
+
+  return { item, itemStatus, completedText, handleComplete, handleDelete };
+};
+
+interface ItemProps {
+  todoId: EntityId;
+}
+
+const Item = React.memo(({ todoId }: ItemProps) => {
+  const { item, itemStatus, completedText, handleComplete, handleDelete } =
+    useItemHooks(todoId);
 
   return (
     <article className={styles.Item}>
