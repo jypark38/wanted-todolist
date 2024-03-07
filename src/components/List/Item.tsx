@@ -21,7 +21,13 @@ const useItemHooks = (todoId: EntityId) => {
   const itemStatus = item.completed ? "completed" : "pending";
   const completedText = item.completed ? "취소" : "완료";
 
-  return { item, itemStatus, completedText, handleComplete, handleDelete };
+  return {
+    text: item.text,
+    itemStatus,
+    completedText,
+    handleComplete,
+    handleDelete,
+  };
 };
 
 interface ItemProps {
@@ -29,13 +35,13 @@ interface ItemProps {
 }
 
 const Item = React.memo(({ todoId }: ItemProps) => {
-  const { item, itemStatus, completedText, handleComplete, handleDelete } =
+  const { text, itemStatus, completedText, handleComplete, handleDelete } =
     useItemHooks(todoId);
 
   return (
     <article className={styles.Item}>
       <div className={styles.TextContainer}>
-        <p className={styles.TodoText}>{item.text}</p>
+        <p className={styles.TodoText}>{text}</p>
         <span className={styles.Status}>{itemStatus}</span>
       </div>
       <div className={styles.ButtonContainer}>
