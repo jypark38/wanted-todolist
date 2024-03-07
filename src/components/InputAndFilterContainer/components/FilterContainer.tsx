@@ -5,6 +5,7 @@ import styles from "./FilterContainer.module.css";
 
 const FilterContainer = () => {
   const dispatch = useAppDispatch();
+
   const btns = Object.values(filterOptions).map((option) => {
     const handleClick = () => {
       dispatch(setFilter(option));
@@ -16,6 +17,7 @@ const FilterContainer = () => {
       </li>
     );
   });
+
   return (
     <section className={styles.FilterContainer}>
       <h2>Filter</h2>

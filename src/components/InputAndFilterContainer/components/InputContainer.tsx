@@ -3,13 +3,17 @@ import { buttonProps } from "@/interface/propsType";
 import { useAppDispatch } from "@/store/hooks";
 import { addTodo } from "@/store/slice/todosSlice";
 import { nanoid } from "@reduxjs/toolkit";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from "./InputContainer.module.css";
 
-const InputContainer = () => {
+const useInputHook = () => {
+  const dispatch = useAppDispatch();
+
   const [text, setText] = useState<string>("");
 
-  const dispatch = useAppDispatch();
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
 
   const handleSubmit: buttonProps["handleClick"] = (event) => {
     const trimmedText = text.trim();
@@ -24,21 +28,40 @@ const InputContainer = () => {
     }
   };
 
+  return { text, handleChange, handleSubmit };
+};
+
+interface Props {
+  type: string;
+  id: string;
+}
+
+const InputForm = ({ type = "text", id }: Props) => {
+  const { text, handleChange, handleSubmit } = useInputHook();
+
+  return (
+    <>
+      <label htmlFor={id}></label>
+      <input
+        className={styles.Input}
+        type={type}
+        id={id}
+        value={text}
+        onChange={handleChange}
+        onKeyDown={handleSubmit}
+      />
+      <Button option="제출" handleClick={handleSubmit} />
+    </>
+  );
+};
+
+const InputContainer = () => {
   const date = new Date();
 
   return (
     <section className={styles.InputContainer}>
       <h2>Todo</h2>
-      <label htmlFor="todo"></label>
-      <input
-        className={styles.Input}
-        type="text"
-        id="todo"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={(e) => handleSubmit(e)}
-      />
-      <Button option="제출" handleClick={(e) => handleSubmit(e)} />
+      <InputForm type="text" id="todo" />
       <p className={styles.Date}>Today : {date.toLocaleDateString()}</p>
     </section>
   );
