@@ -4,25 +4,28 @@ import { selectFilterTodoIds } from "@/store/slice/todosSlice";
 import { useAppSelector } from "@/store/hooks";
 import Item from "./Item";
 import { shallowEqual } from "react-redux";
+import { EntityId } from "@reduxjs/toolkit";
+
+const returnTodoItems = (filterTodosIds: EntityId[]) => {
+  return (
+    <ul className={styles.Ul}>
+      {filterTodosIds.map((todoid) => (
+        <li key={todoid}>
+          <Item todoId={todoid} />
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const List = () => {
   const filterTodosIds = useAppSelector(selectFilterTodoIds, shallowEqual);
 
-  if (filterTodosIds.length) {
-    return (
-      <>
-        <ul className={styles.Ul}>
-          {filterTodosIds.map((todoid) => (
-            <li key={todoid}>
-              <Item todoId={todoid} />
-            </li>
-          ))}
-        </ul>
-      </>
-    );
-  } else {
+  if (filterTodosIds.length == 0) {
     return <div>목록이 비어있어요</div>;
   }
+
+  return returnTodoItems(filterTodosIds);
 };
 
 const ListSection = () => {

@@ -2,20 +2,45 @@ import React from "react";
 import styles from "./Button.module.css";
 import { buttonProps } from "../../interface/propsType";
 
-const Button = ({ option, handleClick }: buttonProps) => {
-  let classname = `${styles.Button}`;
-  if (option === "삭제") {
-    classname += ` ${styles.Negative}`;
-  } else if (option !== "제출") {
-    classname += ` ${styles.Positive}`;
-  } else {
-    classname += ` ${styles.Submit}`;
-  }
-
+const Button = ({ option, className, handleClick }: buttonProps) => {
   return (
-    <button type="button" className={classname} onClick={handleClick}>
+    <button
+      type="button"
+      className={styles.Button + " " + className}
+      onClick={handleClick}
+    >
       {option}
     </button>
+  );
+};
+
+export const SubmitButton = ({ option, handleClick }: buttonProps) => {
+  return (
+    <Button
+      option={option}
+      className={styles.Submit}
+      handleClick={handleClick}
+    />
+  );
+};
+
+export const DeleteButton = ({ option, handleClick }: buttonProps) => {
+  return (
+    <Button
+      option={option}
+      className={styles.Negative}
+      handleClick={handleClick}
+    />
+  );
+};
+
+export const CompleteButton = ({ option, handleClick }: buttonProps) => {
+  return (
+    <Button
+      option={option}
+      className={styles.Positive}
+      handleClick={handleClick}
+    />
   );
 };
 

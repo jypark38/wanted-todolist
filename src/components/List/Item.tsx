@@ -6,8 +6,8 @@ import {
   deleteTodo,
   selectTodoById,
 } from "@/store/slice/todosSlice";
-import Button from "../Button";
 import styles from "./Item.module.css";
+import { CompleteButton, DeleteButton } from "../Button/Button";
 
 const useItemHooks = (todoId: EntityId) => {
   const item = useAppSelector((state) => selectTodoById(state, todoId));
@@ -45,8 +45,8 @@ const Item = React.memo(({ todoId }: ItemProps) => {
         <span className={styles.Status}>{itemStatus}</span>
       </div>
       <div className={styles.ButtonContainer}>
-        <Button option={completedText} handleClick={handleComplete} />
-        <Button option={"삭제"} handleClick={handleDelete} />
+        <CompleteButton option={completedText} handleClick={handleComplete} />
+        <DeleteButton option={"삭제"} handleClick={handleDelete} />
       </div>
     </article>
   );

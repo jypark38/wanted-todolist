@@ -1,19 +1,30 @@
 import React from "react";
 import styles from "./FilterButton.module.css";
 import { buttonProps } from "@/interface/propsType";
-import { useAppSelector } from "@/store/hooks";
-import { filterSelector } from "@/store/slice/filterSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { filterSelector, setFilter } from "@/store/slice/filterSlice";
 
-const FilterButton = ({ option, handleClick }: buttonProps) => {
+const FilterButton = ({ option }: buttonProps) => {
   const currentStatus = useAppSelector(filterSelector);
+  const dispatch = useAppDispatch();
 
-  let classname = `${styles.FilterButton}`;
+  const handleClick = () => {
+    dispatch(setFilter(option));
+  };
+
   if (option === currentStatus) {
-    classname += ` ${styles.Active}`;
+    return (
+      <button
+        className={`${styles.FilterButton} ${styles.Active}`}
+        onClick={handleClick}
+      >
+        {option}
+      </button>
+    );
   }
 
   return (
-    <button onClick={handleClick} className={classname}>
+    <button className={styles.FilterButton} onClick={handleClick}>
       {option}
     </button>
   );
