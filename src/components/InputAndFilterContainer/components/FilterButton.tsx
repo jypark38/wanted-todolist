@@ -4,13 +4,19 @@ import { buttonProps } from "@/interface/propsType";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { filterSelector, setFilter } from "@/store/slice/filterSlice";
 
-const FilterButton = ({ option }: buttonProps) => {
+const useFilterHooks = (option: string) => {
   const currentStatus = useAppSelector(filterSelector);
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
     dispatch(setFilter(option));
   };
+
+  return { handleClick, currentStatus };
+};
+
+const FilterButton = ({ option }: buttonProps) => {
+  const { currentStatus, handleClick } = useFilterHooks(option);
 
   if (option === currentStatus) {
     return (
