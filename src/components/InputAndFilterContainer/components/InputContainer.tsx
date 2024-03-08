@@ -19,9 +19,7 @@ const useInputHook = () => {
   const handleSubmit: buttonProps["handleClick"] = (event) => {
     const trimmedText = text.trim();
 
-    if (event == undefined) return;
-
-    if ("key" in event && event.keyCode !== 13) return;
+    if ("key" in event! && event.keyCode !== 13) return;
 
     if (trimmedText) {
       dispatch(addTodo({ id: nanoid(), text: trimmedText, completed: false }));
