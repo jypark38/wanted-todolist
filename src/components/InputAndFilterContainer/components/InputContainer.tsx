@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import { SubmitButton } from "@/components/Button/Button";
 import { buttonProps } from "@/interface/propsType";
 import { useAppDispatch } from "@/store/hooks";
 import { addTodo } from "@/store/slice/todosSlice";
@@ -50,7 +51,7 @@ const InputForm = ({ type = "text", id }: Props) => {
         onChange={handleChange}
         onKeyDown={handleSubmit}
       />
-      <Button option="제출" handleClick={handleSubmit} />
+      <SubmitButton option="제출" handleClick={handleSubmit} />
     </>
   );
 };
