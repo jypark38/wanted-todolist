@@ -39,16 +39,18 @@ const Item = React.memo(({ todoId }: ItemProps) => {
     useItemHooks(todoId);
 
   return (
-    <article className={styles.Item}>
-      <div className={styles.TextContainer}>
-        <p className={styles.TodoText}>{text}</p>
-        <span className={styles.Status}>{itemStatus}</span>
-      </div>
-      <div className={styles.ButtonContainer}>
-        <CompleteButton option={completedText} handleClick={handleComplete} />
-        <DeleteButton option={"삭제"} handleClick={handleDelete} />
-      </div>
-    </article>
+    <li>
+      <article className={styles.Item}>
+        <div className={styles.TextContainer}>
+          <p className={styles.TodoText}>{text}</p>
+          <span className={styles.Status}>{itemStatus}</span>
+        </div>
+        <div className={styles.ButtonContainer}>
+          <CompleteButton option={completedText} handleClick={handleComplete} />
+          <DeleteButton option={"삭제"} handleClick={handleDelete} />
+        </div>
+      </article>
+    </li>
   );
 });
 

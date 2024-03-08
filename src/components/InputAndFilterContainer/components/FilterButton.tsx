@@ -12,25 +12,19 @@ const useFilterHooks = (option: string) => {
     dispatch(setFilter(option));
   };
 
-  return { handleClick, currentStatus };
+  const className =
+    option === currentStatus
+      ? `${styles.FilterButton} ${styles.Active}`
+      : styles.FilterButton;
+
+  return { handleClick, className };
 };
 
 const FilterButton = ({ option }: buttonProps) => {
-  const { currentStatus, handleClick } = useFilterHooks(option);
-
-  if (option === currentStatus) {
-    return (
-      <button
-        className={`${styles.FilterButton} ${styles.Active}`}
-        onClick={handleClick}
-      >
-        {option}
-      </button>
-    );
-  }
+  const { handleClick, className } = useFilterHooks(option);
 
   return (
-    <button className={styles.FilterButton} onClick={handleClick}>
+    <button className={className} onClick={handleClick}>
       {option}
     </button>
   );

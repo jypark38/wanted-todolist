@@ -10,9 +10,7 @@ const returnTodoItems = (filterTodosIds: EntityId[]) => {
   return (
     <ul className={styles.Ul}>
       {filterTodosIds.map((todoid) => (
-        <li key={todoid}>
-          <Item todoId={todoid} />
-        </li>
+        <Item key={todoid} todoId={todoid} />
       ))}
     </ul>
   );
